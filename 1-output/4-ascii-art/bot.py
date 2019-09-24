@@ -1,6 +1,8 @@
+print ("please enter robot eye")
+eye = input ()
+
 print ("##########")
-print (" ########")
-print ("  ######")
-print ("   ####")
-print ("    ##")
-print ("     #")
+print ("# " + eye + "    " + eye + " #")
+print ("#        #")
+print ("#        #")
+print ("##########")
