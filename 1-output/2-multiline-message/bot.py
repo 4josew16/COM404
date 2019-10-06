@@ -1,3 +1,4 @@
+# Display message to the standard output
 print("system failure Imminent")
 print ("system reboot has been initiated...")
 print ()
