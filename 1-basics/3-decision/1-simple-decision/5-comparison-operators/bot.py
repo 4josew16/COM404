@@ -5,8 +5,11 @@ first_number = int(input())
 print("Please enter a second number (must be between 1 and 10)") # create a variable for the second number
 second_number=int(input())
 # create a comparison operator 
-if (first_number>=second_number):
+if (first_number>second_number):
     print("The first number is the biggest")
-elif (second_number<=first_number):
+if (second_number<first_number):
     print("The second number is the smallest")
+elif (first_number==second_number):
+    print("Both are equal")
+
 
