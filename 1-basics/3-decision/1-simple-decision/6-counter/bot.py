@@ -1,23 +1,31 @@
-# work out number of odd and even numbers 
-# get user response to questions 
-print("Please enter a number between one and 10")
+# Ask user for numbers
+print("Please enter the first whole number")
 num_1=int (input())
-if num_1%2==0:
-    print("even")
-else: 
-    print("odd")
-print("Please enter a second number betwween one and 10")
+
+print("Please enter the second whole number")
 num_2=int (input())
-if num_2%2==0:
-    print("even")
-else: 
-    print("odd")
-print("Please enter a third number betwween one and 10")
+
+print("Please enter the third whole number")
 num_3=int (input())
-if num_3%2==0:
-    print("even")
+
+even_numbers =0
+odd_numbers = 0
+
+# Determine which numbers are even and which are odd 
+if (num_1%2==0):
+    even_numbers = even_numbers + 1
 else: 
-    print("odd")
-responses = [num_1,num_2,num_3]
-count = responses.count('odd')
-print("the countof odd is", count)
+   odd_numbers = odd_numbers + 1
+
+if (num_2%2==0):
+    even_numbers = even_numbers + 1
+else:
+    odd_numbers = odd_numbers + 1
+
+if (num_3%2==0):
+    even_numbers = even_numbers + 1
+else:
+    odd_numbers = odd_numbers + 1
+    
+# Display result 
+print("There were", even_numbers, "even and", odd_numbers, " odd numbers.")
