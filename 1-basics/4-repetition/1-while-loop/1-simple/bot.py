@@ -1,16 +1,18 @@
-# Remove required cables holding the robot 
-answer = int(input("How many cables should I remove?"))
+# Remove required cables holding the robot
+# Ask user for number of cables
+print("How many cables should I remove? ")
+cables_to_remove = int(input())
 
-# Create a variable to track the number of cables removed 
-cables=1
+# Create a variable to track the number of cables removed
+cables_removed=0
+# Remove cables
+(print())
+# Create a while loop to count the number of cables removed
+while (cables_removed < cables_to_remove):
+    print("Removed cables.")
+    cables_removed=cables_removed+1
 
-# Create a while loop to count the number of cables removed 
-while (cables <= answer): 
-    # Display message
-    print("Removed Cable")
 
-    # Increment the value for tracking the number of removed cables 
-    cables+=1
 
 
 
