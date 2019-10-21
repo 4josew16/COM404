@@ -1,5 +1,12 @@
-# Create a program to communicate with Beep 
+# Ask user for phrase
 print ("Please enter a phrase.")
 phrase = input()
-lengh_of_phrase = (len(phrase))
-print("Bop " * lengh_of_phrase)
+
+# create a control variable 
+bops =0
+
+#Display Bops 
+
+while (bops < len(phrase)):
+    print("Bop ", end="")
+    bops = bops + 1
