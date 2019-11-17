@@ -7,6 +7,14 @@ class Gui(Tk):
     super().__init__()
 
     # set window attributes
+
+    # add window components by
+    # ...creating an object of the component stored in an attribute
+    # ...setting the attributes of the component using the attribute
+    # ...assigning any event handlers to the component
+
+    # handle events
+    # (callback functions to handle events will go here)
     self.title("Newsletter")
     self.configure(bg="#00ffff",
                    height=200, 
