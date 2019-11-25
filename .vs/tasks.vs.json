@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-gui",
+      "appliesTo": "2-guis/2-windows-layouts/3-grid/gui.py",
+      "type": "launch"
+    }
+  ]
+}
