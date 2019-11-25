@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import messagebox
 
 class Gui(Tk):
 
@@ -43,6 +44,7 @@ class Gui(Tk):
         self.ticket_entry = Entry(self.outer_frame)
         self.ticket_entry.grid(row=2, column=0,)
         self.ticket_entry.configure(width=40)
+        
 
     def __add_buy_button(self):
         self.buy_button = Button(self.outer_frame)
@@ -53,5 +55,6 @@ class Gui(Tk):
         self.buy_button.bind("<ButtonRelease-1>", self.__buy_button_clicked)
 
     def __buy_button_clicked(self, event):
-        pass
-  
+        messagebox.showinfo("Purchased!", "You have purchased the tickets!")
+
+    
