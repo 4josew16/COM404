@@ -20,11 +20,11 @@ class Gui(Tk):
                    height=200, 
                    width=400)
 
-    self.add_heading_label()
-    self.add_second_label()
-    self.add_third_label()
-    self.add_email_entry()
-    self.add_button()
+    self.add_heading_label() # call the first heading label function
+    self.add_second_label() # call the second heading label function
+    self.add_third_label() # call the third heading label function
+    self.add_email_entry() # call the emaail entry function
+    self.add_button() # call the add button function
    
 
     # add window components by
@@ -41,7 +41,8 @@ class Gui(Tk):
     self.heading_label = Label()
     self.heading_label.place(x=40, y=30)
     
-    # ...setting the attributes of the component using the attribute
+    # style
+    # # ...setting the attributes of the component using the attribute
     self.heading_label.configure(bg="#00ffff",font="Arial 16",
                                  text="RECEIVE OUR NEWSLETTER.")
                                  
