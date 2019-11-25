@@ -15,6 +15,7 @@ class Gui(Tk):
         self.__add_instruction_label()
         self.__add_ticket_entry()
         self.__add_buy_button()
+ 
 
     def __add_outer_frame(self):
         self.outer_frame = Frame()
@@ -48,3 +49,9 @@ class Gui(Tk):
         self.buy_button.grid(row=3,column=0,)
         self.buy_button.configure(bg="white",
                                         text="Buy")
+        # event
+        self.buy_button.bind("<ButtonRelease-1>", self.__buy_button_clicked)
+
+    def __buy_button_clicked(self, event):
+        pass
+  
