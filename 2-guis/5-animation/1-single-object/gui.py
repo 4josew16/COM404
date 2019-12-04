@@ -7,17 +7,17 @@ class AnimatedGui(Tk):
         super().__init__()
         
         # load resources
-        self.ball_image = PhotoImage(file="U:/GUIs/ball.gif")
+        self.ball_image = PhotoImage(file = "C:/Users/Wendy/Documents/GitHub/Ball.gif")
         
         # set window attributes
-        self.configure(height=500,
-                       width=500)
+        self.configure(height=300,
+                       width=300)
 
         # set animation attributes
-        self.ball_x_pos = 200
-        self.ball_y_pos = 200
-        self.ball_x_change = 1
-        self.ball_y_change = 1
+        self.ball_x_pos = 20
+        self.ball_y_pos = 20
+        self.ball_x_change = 2
+        self.ball_y_change = 2
         
         # add components
         self.add_ball_image_label() 
@@ -31,11 +31,18 @@ class AnimatedGui(Tk):
         self.ball_y_pos = self.ball_y_pos + self.ball_y_change
         self.ball_image_label.place(x=self.ball_x_pos, 
                                     y=self.ball_y_pos)
-        if self.ball_x_pos >450:
+        if self.ball_x_pos >150:
             self.ball_x_change = -2
+        if self.ball_y_pos >150:
+            self.ball_y_change = -2
+
+        if self.ball_x_pos <0:
+            self.ball_x_change = 2
+        if self.ball_y_pos <0:
+            self.ball_y_change = 2   
         self.after(100, self.tick)
 
-            
+       
 
     # the ball image
     def add_ball_image_label(self):
