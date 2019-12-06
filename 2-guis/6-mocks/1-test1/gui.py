@@ -6,67 +6,49 @@ class Gui(Tk):
   def __init__(self):
     super().__init__()
 
-    # set window attributes
+  # add window components 
+    self.title ("Newsletter")
+    self.configure (bg="#eee", height=200, width=360, padx=10, pady=10)
 
-    # add window components by
-    # ...creating an object of the component stored in an attribute
-    # ...setting the attributes of the component using the attribute
-    # ...assigning any event handlers to the component
-
-    # handle events
-    # (callback functions to handle events will go here)
-    self.title("Newsletter")
-    self.configure(bg="#eee",
-                   padX=10, 
-                   pady=10)
-
-    self.add_heading_label() # call the first heading label function
-    self.add_second_label() # call the second heading label function
-    self.add_third_label() # call the third heading label function
-    self.add_email_entry() # call the emaail entry function
-    self.add_button() # call the add button function
-   
-
-    # add window components by
-    # ...creating an object of the component stored in an attribute
-    # ...setting the attributes of the component using the attribute
-    # ...assigning any event handlers to the component
-
-  # handle events
-  # (callback functions to handle events will go here)
-  
-    # add window components by
-    # ...creating an object of the component stored in an attribute  
-  def add_heading_label(self):
-    self.heading_label = Label()
-    self.heading_label.place(x=40, y=30)
+  # add components 
+    self.__add_outer_frame()
+    self.__add_heading_label()
+    self.__add_instruction_label()
+    self.__add_email_label()
     
-    # style
-    # # ...setting the attributes of the component using the attribute
-    self.heading_label.configure(bg="#00ffff",font="Arial 16",
-                                 text="RECEIVE OUR NEWSLETTER.")
-                                 
-  def add_second_label(self):
-    self.second_label = Label()
-    self.second_label.place(x=35, y=80)
-    self.second_label.configure(bg="#00ffff",font="Arial 10",
-                                 text="Please enter your email below to receive our newsletter.")
-  
-  def add_third_label(self):
-    self.third_label = Label()
-    self.third_label.place(x=40, y=120)
-    self.third_label.configure(bg="#00ffff",font="Arial 10",
-                                 text="Email")
-  
-  def add_email_entry(self):
-    self.email_entry = Entry()
-    self.email_entry.place(x=100, y=120)
-    self.email_entry.configure(width = 40)
 
-  def add_button(self):
-    self.button = Button()
-    self.button.place (x=150, y=160)
-    self.button.configure(font = "Arial 10", text="Subscribe", width=10)
+  # create outer frame 
+
+  def __add_outer_frame (self):
+    self.outer_frame = Frame()
+    self.outer_frame.place(x=10, y=10,)
+    
+    
+  #create heading label
+  
+  def __add_heading_label (self):
+    self.heading_label = Label(self.outer_frame)
+    self.heading_label.pack(fill=X)
+    self.heading_label.configure(text="RECEIVE OUR NEWSLETTER", padx=10, pady=10)
+  
+  # create instructional label 
+
+  def __add_instruction_label (self):
+    self.instruction_label = Label (self.outer_frame)
+    self.instruction_label.pack(fill=X)   
+    self.instruction_label.configure(justify=LEFT,
+                                     text = "Please enter your email below to receive our newsletter.",
+                                     padx=10, pady=10)
+  
+  def __add_email_label (self):
+    self.email_label = Label (self.outer_frame)
+    self.email_label.place(x=10, y=102)
+    self.email_label.pack(padx=10, pady=10)
+    self.email_label.configure(text="Email")
+
+
+
+
 
 
 
