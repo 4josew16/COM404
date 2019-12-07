@@ -53,6 +53,7 @@ class Gui(Tk):
     def _buy_button_clicked (self, event):
         messagebox.showinfo("Purchased!", "You have purchased the tickets!")
     
+    
     def __buy_button_clicked(self, event):
         num_tickets = int(self.tickets_entry.get())
         if (num_tickets == 1):
@@ -61,7 +62,6 @@ class Gui(Tk):
             messagebox.showinfo("Purchased", "You have purchased {} tickets".format(num_tickets))
         else:
             messagebox.showerror("Error", "You have entered an invalid number of tickets!")
-
 
 
        

@@ -1,14 +1,18 @@
 from tkinter import *
+from tkinter import messagebox
 
 class Gui(Tk):
 
   # initialise window
   def __init__(self):
     super().__init__()
+  
+    #load resources 
+    self.email_image = PhotoImage(file="C:/Users/Wendy/Documents/GitHub/email.gif")
 
   # add window components 
     self.title ("Newsletter")
-    self.configure (bg="#eee", height=200, width=360, padx=10, pady=10)
+    self.configure (bg="#eee", padx=10, pady=10)
 
   # add components 
     self.__add_outer_frame()
@@ -17,9 +21,11 @@ class Gui(Tk):
     self.__add_email_frame()
     self.__add_email_label()
     self.__add_entry_label()
+    self.__add_email_image_label()
+    self.__add_subscribe_button()
+
   
     
-
   # create outer frame 
 
   def __add_outer_frame (self):
@@ -47,6 +53,7 @@ class Gui(Tk):
 
   def __add_email_frame(self):
     self.email_frame = Frame(self.outer_frame)
+    self.email_frame.pack(fill=X)
     self.email_frame.configure(padx=10, pady=10)                                   
   
   # create email label 
@@ -63,13 +70,25 @@ class Gui(Tk):
     self.entry_label.pack (side=LEFT)
     self.entry_label.configure(bd=2, font ="#f00", width =30)
   
- 
+  def __add_email_image_label(self):
+    self.email_image_label = Label (self.email_frame)
+    self.email_image_label.pack (side=RIGHT)
+    self.email_image_label.configure (image=self.email_image, padx=10)
 
 
+  # create subscribe button 
 
+  def __add_subscribe_button(self):
+    self.subscribe_button = Button (self.outer_frame)
+    self.subscribe_button.pack (fill=X)
+    self.subscribe_button.configure (bg="#fee", text = "Subscribe")
+    self.subscribe_button.bind("<ButtonRelease-1>", self.__subscribe_button_clicked)
+      
+ # create an event 
 
-
-
+  def __subscribe_button_clicked(self, event): # do not add this def to the initialiser
+    messagebox.showinfo("Newsletter", "Purchased")
+  
 
 
 
