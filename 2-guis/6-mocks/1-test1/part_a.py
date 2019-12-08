@@ -24,10 +24,8 @@ class Gui(Tk):
     self.__add_email_image_label()
     self.__add_subscribe_button()
 
-  
-    
+      
   # create outer frame 
-
   def __add_outer_frame (self):
     self.outer_frame = Frame()
     self.outer_frame.pack(fill=X)
@@ -35,14 +33,12 @@ class Gui(Tk):
     
     
   #create heading label
-  
   def __add_heading_label (self):
     self.heading_label = Label(self.outer_frame)
     self.heading_label.pack(fill=X)
     self.heading_label.configure(font = "Arial 14", text="RECEIVE OUR NEWSLETTER", padx=10, pady=10)
   
   # create instructional label 
-
   def __add_instruction_label (self):
     self.instruction_label = Label (self.outer_frame)
     self.instruction_label.pack(fill=X)   
@@ -50,21 +46,18 @@ class Gui(Tk):
                                      padx=10, pady=10)
 
   # create a frame for the email label 
-
   def __add_email_frame(self):
     self.email_frame = Frame(self.outer_frame)
     self.email_frame.pack(fill=X)
     self.email_frame.configure(padx=10, pady=10)                                   
   
   # create email label 
-  
   def __add_email_label (self):
     self.email_label = Label (self.email_frame)
     self.email_label.pack(side=LEFT)
     self.email_label.configure(padx=10, pady=10, text="Email")
   
   # create entry label 
-
   def __add_entry_label (self):
     self.entry_label = Entry (self.email_frame)
     self.entry_label.pack (side=LEFT)
@@ -75,9 +68,7 @@ class Gui(Tk):
     self.email_image_label.pack (side=RIGHT)
     self.email_image_label.configure (image=self.email_image, padx=10)
 
-
   # create subscribe button 
-
   def __add_subscribe_button(self):
     self.subscribe_button = Button (self.outer_frame)
     self.subscribe_button.pack (fill=X)
@@ -85,14 +76,13 @@ class Gui(Tk):
     self.subscribe_button.bind("<ButtonRelease-1>", self.__subscribe_button_clicked)
       
  # create an event 
-
   def __subscribe_button_clicked(self, event): # do not add this def to the initialiser
     messagebox.showinfo("Newsletter", "Purchased")
   
 
 
 
-from gui import Gui
+from part_a import Gui
     
 gui = Gui()
 gui.mainloop() 
