@@ -2,11 +2,15 @@ from tkinter import *
 
 
 
-class a3(Tk):
+class a4(Tk):
 
     def __init__(self):
         super().__init__()
 
+    # load resources 
+    self.tick_image = PhotoImage(file="C:/Users/Wendy/Documents/GitHub/tick.gif")
+    self.cross_image = PhotoImage(file="C:/Users/Wendy/Documents/GitHub/cross.gif")
+  
     
     # set window properties
         self.configure(bg="#ffe8e8", padx=10, pady=10)
@@ -85,7 +89,7 @@ class a3(Tk):
        
                       
 
-from a3 import a3
+from a4 import a4
 
-my_gui = a3()
+my_gui = a4()
 my_gui.mainloop()

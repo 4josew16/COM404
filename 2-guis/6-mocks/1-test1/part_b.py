@@ -7,9 +7,7 @@ class part_b(Tk):
   def __init__(self):
     super().__init__()
 
-  # declare variable for entry label use
-    self.value=""
-
+ 
   # load resources 
     self.default_email_image = PhotoImage(file="C:/Users/Wendy/Documents/GitHub/default.gif")
     self.filled_email_image = PhotoImage(file="C:/Users/Wendy/Documents/GitHub/filled.gif")
@@ -27,7 +25,10 @@ class part_b(Tk):
     self.__add_email_label()
     self.__add_entry_label()
     self.__add_default_email_image_label()
+    self.__filled_email_image()
+    self.__empty_email_image()
     self.__add_subscribe_button()
+  
 
       
   # create outer frame 
@@ -66,13 +67,8 @@ class part_b(Tk):
     self.entry_label = Entry (self.email_frame)
     self.entry_label.pack (side=LEFT)
     self.entry_label.configure(bd=2, font ="#f00", width =30)
-    self.entry_label.bind("<KeyRelease>", self.KeyRelease)  
+    self.entry_label.bind("<KeyRelease>", self.__change_email_entry)  
   
-  # create on return function
-  def __KeyRelease(self, event):
-    self.value = self.entry_label.get(self.default_email_image)
-    
-            
   # create email image label function  
   def __add_default_email_image_label(self):
     self.default_email_image_label = Label (self.email_frame)
@@ -98,6 +94,14 @@ class part_b(Tk):
     self.subscribe_button.pack (fill=X)
     self.subscribe_button.configure (bg="#fee", text = "Subscribe")
     self.subscribe_button.bind("<ButtonRelease-1>", self.__subscribe_button_clicked)
+  
+  #create event for changing email entries 
+  def __change_email_entry(self, event):
+    entry_label = self.entry_label.get()
+    if entry_label =='':
+      self.default_email_image.configure(image = self.filled_email_image)
+    if entry_label!='':
+      self.default_email_image.configure(image= self.empty_email_image)
       
  # create an event 
 
