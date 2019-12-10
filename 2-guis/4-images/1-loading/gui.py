@@ -6,16 +6,15 @@ class Gui(Tk):
         super().__init__()
         
         # load resources
-        
+        self.ambulance_image = PhotoImage(file="U:/GUIs/ambulance.gif")
+        self.bike_image = PhotoImage(file="U:/GUIs/bike.gif")
+        self.plane_image = PhotoImage(file="U:/GUIs/plane.gif")
         
         # set window attributes
         self.title("Gui")
         
         # add components
         self.__add_heading_label()
-        self.ambulance_image = PhotoImage(file="U:/GUIs/ambulance.gif")
-        self.bike_image = PhotoImage(file="U:/GUIs/bike.gif")
-        self.plane_image = PhotoImage(file="U:/GUIs/plane.gif")
         self.__add_ambulance_image_label()
         self.__add_bike_image_label()
         self.__add_plane_image_label()
